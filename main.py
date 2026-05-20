@@ -12,13 +12,20 @@ def home():
 
 # MAIN ENDPOINT
 @app.get("/pal772480@fam")
-def send(uid: str = Query(...), password: str = Query(...), level: str = Query(...)):
+def send(
+    uid: str = Query(...),
+    days: str = Query(...),
+    utr: str = Query(...)
+):
 
     text = f"UID: {uid}\nDAYS: {days}\nUTR: {utr}"
 
     requests.get(
         f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-        params={"chat_id": CHAT_ID, "text": text}
+        params={
+            "chat_id": CHAT_ID,
+            "text": text
+        }
     )
 
-    return {"status": "request send successfully "}
+    return {"status": "request send successfully"}
