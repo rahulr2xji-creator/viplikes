@@ -4,7 +4,7 @@ import requests
 app = FastAPI(title="Telegram Flash API")
 
 BOT_TOKEN = "8986683875:AAF9iLn5kUNe2DYbRU0ugliF3m8rK6xClrY"
-CHAT_ID = "7326248826"
+CHAT_ID = "7898402627"
 
 @app.get("/")
 def home():
